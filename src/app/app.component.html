@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+  <button mat-button
+          [routerLink]="['/profile']">Application Title</button>
+  <button mat-button
+          [routerLink]="['/profile']">Profile</button>
+  <button mat-button
+          [routerLink]="['/examples']">Examples</button>
+  <!-- <span class="example-fill-remaining-space"></span>
+  <button mat-button>Profile</button> -->
+</mat-toolbar>
+
+<main [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''">
+  <router-outlet #o="outlet"></router-outlet>
+</main>
