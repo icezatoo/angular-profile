@@ -1,0 +1,23 @@
+<h1>{{titlelayout | titlecase }}</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-3" *ngFor="let data of datalist;">
+      <div class="cardcontainer">
+        <mat-card class="example-card ">
+          <img mat-card-image [src]="data.linkimage" alt="Photo of a Shiba Inu" width="250" height="176">
+          <mat-card-content *ngIf="!offcontent">
+            <h3>{{data.title}}</h3>
+            <div>
+              <p>
+                {{data.timeperiod}}
+              </p>
+              <p data-reactid="25">
+                {{data.description}}
+              </p>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,10 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
 import { AppRoutingModule } from './app-routing.module';
+import { reducers } from './profile/reducers';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+import { GetProfileEffects } from './profile/effect/getprofile.effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
 import {
   MatToolbarModule,
   MatButtonModule,
@@ -13,13 +19,17 @@ import {
 @NgModule({
   declarations: [AppComponent],
   imports: [
+    HttpClientModule,
     AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
+    StoreModule.forRoot(reducers),
+    StoreDevtoolsModule.instrument(),
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
-    MatGridListModule
+    MatGridListModule,
+    EffectsModule.forRoot([GetProfileEffects])
   ],
 
   providers: [],

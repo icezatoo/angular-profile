@@ -8,5 +8,5 @@ import { fadeAnimation } from './animations';
   animations: [fadeAnimation]
 })
 export class AppComponent {
-  title = 'app';
+  public year = new Date().getFullYear();
 }

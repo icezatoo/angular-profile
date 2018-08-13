@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import {
   MatButtonModule,
   MatGridListModule,
-  MatCardModule
+  MatCardModule,
+  MatProgressSpinnerModule
 } from '@angular/material';
+import { FilterPipe } from './pips/filter.pipe';
 
 @NgModule({
   imports: [
@@ -13,14 +16,19 @@ import {
     ReactiveFormsModule,
     MatButtonModule,
     MatGridListModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     ReactiveFormsModule,
     FormsModule,
     MatButtonModule,
     MatGridListModule,
-    MatCardModule
-  ]
+    MatCardModule,
+    HttpClientModule,
+    MatProgressSpinnerModule
+  ],
+  declarations: [FilterPipe]
 })
 export class AppSharedModule {}

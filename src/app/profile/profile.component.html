@@ -1,14 +1,32 @@
 <div style="padding: 60px;">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-4"> </div>
-      <div class="col-md-auto ">
-        <app-profileheader></app-profileheader>
+  <div *ngIf="loading | async; else elseloading">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-4 col-sm-4  col-lg-4"> </div>
+        <div class="col-md-auto ">
+          <app-profileheader></app-profileheader>
+        </div>
+        <div class="col-4  col-sm-4  col-lg-4"></div>
       </div>
-      <div class="col-4"></div>
-    </div>
-    <div class="row">
-      <p> profile works!</p>
+      <div class="row">
+        <mat-card>
+          <app-profileoverview></app-profileoverview>
+        </mat-card>
+      </div>
+      <div class="row" style="margin-top: 10px;">
+        <mat-card style="min-width: 100%;">
+          <app-layoutcontainer [titlelayout]="'experience'" [datalist]="dataexperience | async"></app-layoutcontainer>
+        </mat-card>
+      </div>
+      <div class="row" style="margin-top: 10px;">
+        <mat-card style="min-width: 100%;">
+          <app-layoutcontainer [titlelayout]="'projects'" [datalist]="dataproject | async" [offcontent]="true"></app-layoutcontainer>
+        </mat-card>
+      </div>
     </div>
   </div>
+  <ng-template #elseloading>
+    <mat-progress-spinner class="example-margin" [color]="'primary'" [mode]="'indeterminate'">
+    </mat-progress-spinner>
+  </ng-template>
 </div>

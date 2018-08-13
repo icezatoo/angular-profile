@@ -1,0 +1,28 @@
+{
+  "profile": {
+    "overview": {
+      "name": "PUNSIKORN TIYAKORN",
+      "description": "web developer with 2 years' experience building products for with a Software  and company present i'm developer Software with Car industry Japen company and i'm A technology enthusiast"
+    },
+    "experience": [
+      {
+        "id": "14782",
+        "title": "CDG",
+        "linkimage": "/assets/image/cdg.jpg",
+        "timeperiod": "2016 - 2017",
+        "description": "budget system and Electronic Documentation System"
+      },
+      {
+        "id": "18857",
+        "title": "Vertice-international",
+        "linkimage": "/assets/image/vertice.jpg",
+        "timeperiod": "2017 - present",
+        "description": "Car industry system"
+      }
+    ],
+    "projects": [
+      { "id": "aw74w7", "linkimage": "/assets/image/cdg.jpg" },
+      { "id": "rwa47w", "linkimage": "/assets/image/vertice.jpg" }
+    ]
+  }
+}
