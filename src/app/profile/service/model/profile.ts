@@ -15,9 +15,11 @@ export interface Experience {
   linkimage?: string;
   timeperiod?: string;
   description?: string;
+  link?: string;
 }
 
 export interface Overview {
   name?: string;
   description?: string;
+  link?: string;
 }

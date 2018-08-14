@@ -3,6 +3,11 @@
 }
 
 .example-card {
+  cursor: pointer;
   // max-width: 250px;
   min-width: 100%;
+}
+
+.example-card:hover {
+  transform: 'scale(1.2)';
 }

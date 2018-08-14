@@ -5,10 +5,10 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
 import { AppRoutingModule } from './app-routing.module';
-import { reducers } from './profile/reducers';
+import { reducers } from './common/reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
-import { GetProfileEffects } from './profile/effect/getprofile.effects';
+import { GetProfileEffects } from './common/effect/getprofile.effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import {

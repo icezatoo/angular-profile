@@ -15,7 +15,5 @@ export class LayoutcontainerComponent implements OnInit {
   public offcontent: boolean = false;
   constructor() {}
 
-  ngOnInit() {
-    console.log(this.datalist, 'dataLayoutcontainer');
-  }
+  ngOnInit() {}
 }

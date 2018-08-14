@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Overview } from './../service/model/profile';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-profileoverview',
@@ -6,10 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profileoverview.component.scss']
 })
 export class ProfileoverviewComponent implements OnInit {
+  @Input()
+  dataoverview: Overview;
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

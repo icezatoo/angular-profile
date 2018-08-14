@@ -1,5 +1,5 @@
-import * as Action from '../action/profile';
-import { Profile } from '../service/model/profile';
+import * as Action from '../action/profile/profile';
+import { Profile } from '../../profile/service/model/profile';
 
 export interface State {
   isLoading: boolean;

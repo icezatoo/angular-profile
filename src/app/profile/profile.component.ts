@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import * as fromStore from './reducers';
-import * as profileAction from './action/profile';
-import { Store } from '@ngrx/store';
-import { Profile, Experience, Project } from './service/model/profile';
-import { Observable } from '../../../node_modules/rxjs';
-import { map } from 'rxjs/operators';
+import { Overview, Experience, Project } from './service/model/profile';
+import { Observable } from 'rxjs';
+import { ProfilefacadesService } from './service/profilefacades.service';
 
 @Component({
   selector: 'app-profile',
@@ -12,22 +9,18 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  profile: Observable<Profile>;
+  profileoverview: Observable<Overview>;
   dataexperience: Observable<Experience[]>;
   dataproject: Observable<Project[]>;
   loading: Observable<any>;
-  constructor(private store: Store<fromStore.State>) {
-    // this.profile = this.store.select(fromStore.getdataprofile$);
-    this.dataexperience = this.store
-      .select(fromStore.getdataprofile$)
-      .pipe(map(data => data.experience));
-    this.dataproject = this.store
-      .select(fromStore.getdataprofile$)
-      .pipe(map(data => data.projects));
-    this.loading = this.store.select(fromStore.getloader$);
+  constructor(private profilefacadesService: ProfilefacadesService) {
+    this.dataexperience = this.profilefacadesService.ongetexperience$();
+    this.dataproject = this.profilefacadesService.ongetprojects$();
+    this.profileoverview = this.profilefacadesService.ongetoverview$();
+    this.loading = this.profilefacadesService.ongetloading$();
   }
 
   ngOnInit() {
-    this.store.dispatch(new profileAction.GetInit());
+    this.profilefacadesService.onsetInitProfile();
   }
 }

@@ -6,7 +6,8 @@ import {
   MatButtonModule,
   MatGridListModule,
   MatCardModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
+  MatIconModule
 } from '@angular/material';
 import { FilterPipe } from './pips/filter.pipe';
 
@@ -18,6 +19,7 @@ import { FilterPipe } from './pips/filter.pipe';
     MatGridListModule,
     MatCardModule,
     HttpClientModule,
+    MatIconModule,
     MatProgressSpinnerModule
   ],
   exports: [
@@ -27,6 +29,7 @@ import { FilterPipe } from './pips/filter.pipe';
     MatGridListModule,
     MatCardModule,
     HttpClientModule,
+    MatIconModule,
     MatProgressSpinnerModule
   ],
   declarations: [FilterPipe]

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Overview } from '../service/model/profile';
 
 @Component({
   selector: 'app-profileheader',
@@ -6,10 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profileheader.component.scss']
 })
 export class ProfileheaderComponent implements OnInit {
+  @Input()
+  dataoverview: Overview;
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

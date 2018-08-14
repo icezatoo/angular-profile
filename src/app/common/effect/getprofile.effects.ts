@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Action } from '@ngrx/store';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { map, mergeMap, catchError, debounceTime } from 'rxjs/operators';
-import * as Act from '../action/profile';
+import * as Act from '../action/profile/profile';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ import * as Act from '../action/profile';
 export class GetProfileEffects {
   @Effect()
   login$: Observable<Action> = this.actions$.pipe(
-    debounceTime(1000),
+    debounceTime(500),
     ofType(Act.GET_INIT),
     mergeMap(action =>
       this.http$.get('/assets/mock/profile.json').pipe(
