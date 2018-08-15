@@ -1,0 +1,32 @@
+<h2>
+  Todo list
+  <button class="todos-filter"
+          [matMenuTriggerFor]="menu"
+          aria-label="todofilter"
+          mat-icon-button>
+    <mat-icon>filter_list</mat-icon>
+  </button>
+  <mat-menu class="todos-filter-menu-overlay"
+            #menu="matMenu"
+            xPosition="before">
+    <button mat-menu-item
+            [ngClass]="{ active: data  }"
+            aria-label="menu">
+      <mat-icon>list</mat-icon>
+      <span>All</span>
+    </button>
+    <button mat-menu-item
+            aria-label="menutwo">
+      <mat-icon>done</mat-icon>
+      <span>Done</span>
+    </button>
+
+    <button mat-menu-item
+            aria-label="menuthree">
+      <mat-icon>stop</mat-icon>
+      <span>Active</span>
+    </button>
+
+
+  </mat-menu>
+</h2>

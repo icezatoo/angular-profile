@@ -7,6 +7,7 @@ export interface Profile {
 export interface Project {
   id?: string;
   linkimage?: string;
+  state?: string;
 }
 
 export interface Experience {
@@ -16,6 +17,7 @@ export interface Experience {
   timeperiod?: string;
   description?: string;
   link?: string;
+  state?: string;
 }
 
 export interface Overview {

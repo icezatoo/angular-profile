@@ -12,6 +12,7 @@ export class ProfilefacadesService {
   ongetexperience$() {
     return this.store.select(fromStore.getdataprofile$).pipe(
       map(data => data.experience),
+      map(val => val.map(this.onmapdatastate)),
       take(1)
     );
   }
@@ -19,6 +20,7 @@ export class ProfilefacadesService {
   ongetprojects$() {
     return this.store.select(fromStore.getdataprofile$).pipe(
       map(data => data.projects),
+      map(val => val.map(this.onmapdatastate)),
       take(1)
     );
   }
@@ -36,5 +38,9 @@ export class ProfilefacadesService {
 
   onsetInitProfile() {
     this.store.dispatch(new profileAction.GetInit());
+  }
+
+  onmapdatastate(data) {
+    return { ...data, state: 'inactive' };
   }
 }

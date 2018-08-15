@@ -1,0 +1,12 @@
+<mat-card class="big-input">
+  <input [(ngModel)]="value"
+         placeholder="Input Title"
+         [disabled]="disabled" />
+  <button mat-raised-button
+          matTooltip="Add new todo"
+          [matTooltipPosition]="'before'"
+          aria-label="Button positions">
+    <mat-icon>add_box</mat-icon>
+  </button>
+
+</mat-card>

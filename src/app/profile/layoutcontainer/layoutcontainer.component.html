@@ -2,8 +2,11 @@
 <div class="container">
   <div class="row">
     <div class="col-3"
-         *ngFor="let data of datalist;">
-      <div class="cardcontainer">
+         *ngFor="let data of datalist;"
+         [@liststate]="data.state">
+      <div class="cardcontainer"
+           (mouseover)="data.state= 'active'"
+           (mouseout)="data.state = 'inactive'">
         <mat-card class="example-card ">
           <a [href]="data.link"
              target="_blank">
@@ -30,3 +33,7 @@
     </div>
   </div>
 </div>
+<!-- [@liststate]="data.state" -->
+<!-- (mouseover)="data.state= 'active'"
+(mouseout)="data.state = 'inactive'" -->
+<!-- (mouseover)="data.state === 'active' ? data.state ='inactive' :  data.state='active' " -->

@@ -9,7 +9,6 @@ import {
   MatProgressSpinnerModule,
   MatIconModule
 } from '@angular/material';
-import { FilterPipe } from './pips/filter.pipe';
 
 @NgModule({
   imports: [
@@ -32,6 +31,6 @@ import { FilterPipe } from './pips/filter.pipe';
     MatIconModule,
     MatProgressSpinnerModule
   ],
-  declarations: [FilterPipe]
+  declarations: []
 })
 export class AppSharedModule {}
