@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { TodoheaderComponent } from './todoheader.component';
+import { MatMenuModule, MatTooltipModule } from '@angular/material';
 
 describe('TodoheaderComponent', () => {
   let component: TodoheaderComponent;
@@ -8,9 +9,10 @@ describe('TodoheaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TodoheaderComponent ]
-    })
-    .compileComponents();
+      imports: [MatMenuModule, MatTooltipModule],
+      declarations: [TodoheaderComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

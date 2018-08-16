@@ -6,15 +6,29 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterLinkDirectiveStub } from '../testing/router-link-directive-stub';
 
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { reducers } from './common/reducers';
+import { GetProfileEffects } from './common/effect/getprofile.effects';
+
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { HttpClientModule } from '@angular/common/http';
+
 let fixture: ComponentFixture<AppComponent>;
 let comp: AppComponent;
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, BrowserAnimationsModule],
+      imports: [
+        RouterTestingModule,
+        BrowserAnimationsModule,
+        StoreModule.forRoot(reducers),
+        EffectsModule.forRoot([GetProfileEffects]),
+        StoreDevtoolsModule,
+        HttpClientModule
+      ],
       declarations: [AppComponent, RouterLinkDirectiveStub],
-
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
       .compileComponents()
@@ -38,14 +52,10 @@ function tests() {
 
   // #docregion test-setup
   beforeEach(() => {
-    fixture.detectChanges(); // trigger initial data binding
-    // find DebugElements with an attached RouterLinkStubDirective
+    fixture.detectChanges();
     linkDes = fixture.debugElement.queryAll(
       By.directive(RouterLinkDirectiveStub)
     );
-
-    // get attached link directive instances
-    // using each DebugElement's injector
     routerLinks = linkDes.map(de => de.injector.get(RouterLinkDirectiveStub));
   });
   // #enddocregion test-setup
@@ -59,8 +69,7 @@ function tests() {
   });
 
   it('can click profile link in template', () => {
-    const profileLink = routerLinks[1]; // profile link directive
+    const profileLink = routerLinks[1];
     expect(profileLink.navigatedTo).toBeNull('should not have navigated yet');
   });
-  // #enddocregion tests
 }

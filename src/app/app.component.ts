@@ -7,6 +7,4 @@ import { fadeAnimation } from './animations';
   styleUrls: ['./app.component.scss'],
   animations: [fadeAnimation]
 })
-export class AppComponent {
-  public year = new Date().getFullYear();
-}
+export class AppComponent {}

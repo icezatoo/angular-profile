@@ -9,15 +9,15 @@ import { ProfilefacadesService } from './service/profilefacades.service';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  profileoverview: Observable<Overview>;
-  dataexperience: Observable<Experience[]>;
-  dataproject: Observable<Project[]>;
-  loading: Observable<any>;
+  profileoverview$: Observable<Overview>;
+  dataexperience$: Observable<Experience[]>;
+  dataproject$: Observable<Project[]>;
+  loading$: Observable<any>;
   constructor(private profilefacadesService: ProfilefacadesService) {
-    this.dataexperience = this.profilefacadesService.ongetexperience$();
-    this.dataproject = this.profilefacadesService.ongetprojects$();
-    this.profileoverview = this.profilefacadesService.ongetoverview$();
-    this.loading = this.profilefacadesService.ongetloading$();
+    this.dataexperience$ = this.profilefacadesService.ongetexperience$();
+    this.dataproject$ = this.profilefacadesService.ongetprojects$();
+    this.profileoverview$ = this.profilefacadesService.ongetoverview$();
+    this.loading$ = this.profilefacadesService.ongetloading$();
   }
 
   ngOnInit() {

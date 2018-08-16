@@ -1,30 +1,30 @@
 <div style="padding: 60px;">
-  <div *ngIf="loading | async; else elseloading">
+  <div *ngIf="loading$ | async; else elseloading">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-4 col-sm-4  col-lg-4"> </div>
         <div class="col-md-auto ">
-          <app-profileheader [dataoverview]="profileoverview | async "></app-profileheader>
+          <app-profileheader [dataoverview]="profileoverview$ | async "></app-profileheader>
         </div>
         <div class="col-4  col-sm-4  col-lg-4"></div>
       </div>
       <div class="row">
         <mat-card>
-          <app-profileoverview [dataoverview]="profileoverview |  async"></app-profileoverview>
+          <app-profileoverview [dataoverview]="profileoverview$ |  async"></app-profileoverview>
         </mat-card>
       </div>
       <div class="row"
            style="margin-top: 10px;">
         <mat-card style="min-width: 100%;">
           <app-layoutcontainer [titlelayout]="'experience'"
-                               [datalist]="dataexperience | async"></app-layoutcontainer>
+                               [datalist]="dataexperience$ | async"></app-layoutcontainer>
         </mat-card>
       </div>
       <div class="row"
            style="margin-top: 10px;">
         <mat-card style="min-width: 100%;">
           <app-layoutcontainer [titlelayout]="'projects'"
-                               [datalist]="dataproject | async"
+                               [datalist]="dataproject$ | async"
                                [offcontent]="true"></app-layoutcontainer>
         </mat-card>
       </div>
