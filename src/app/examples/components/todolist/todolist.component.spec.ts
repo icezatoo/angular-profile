@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { TodolistComponent } from './todolist.component';
 
 describe('TodolistComponent', () => {
@@ -8,9 +8,9 @@ describe('TodolistComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TodolistComponent ]
-    })
-    .compileComponents();
+      declarations: [TodolistComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

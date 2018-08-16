@@ -1,3 +1,17 @@
-<p>
-  todolist works!
-</p>
+<div class="containertodo">
+  <mat-card class="todo"
+            *ngFor="let todo of todolist">
+    <mat-checkbox class="todo-done"
+                  [checked]="todo.completed"></mat-checkbox>
+    <span class="todo-label"
+          [ngClass]="{ 'todo-label-done': todo.completed }">
+      &nbsp;{{todo.title}}&nbsp;
+    </span>
+    <button class="todos-delete"
+            (click)="deletetodo($event)"
+            aria-label="tododelete"
+            mat-icon-button>
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-card>
+</div>

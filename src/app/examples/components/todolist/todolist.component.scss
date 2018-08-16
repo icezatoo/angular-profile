@@ -1,0 +1,27 @@
+.todo {
+  margin-bottom: 10px;
+
+  .todo-done {
+    margin: 0 20px 0 0;
+  }
+
+  .todo-label {
+    position: relative;
+    top: 2px;
+
+    &.todo-label-done {
+      text-decoration: line-through;
+      opacity: 0.5;
+    }
+  }
+
+  .todos-delete {
+    float: right;
+    position: relative;
+  }
+}
+
+.containertodo {
+  height: 450px;
+  overflow: scroll;
+}

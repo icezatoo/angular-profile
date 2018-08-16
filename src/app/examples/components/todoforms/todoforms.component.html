@@ -1,12 +1,19 @@
-<mat-card class="big-input">
-  <input [(ngModel)]="value"
-         placeholder="Input Title"
-         [disabled]="disabled" />
-  <button mat-raised-button
-          matTooltip="Add new todo"
-          [matTooltipPosition]="'before'"
-          aria-label="Button positions">
-    <mat-icon>add_box</mat-icon>
-  </button>
-
-</mat-card>
+<form (ngSubmit)="AddTodo($event)"
+      #todoForm="ngForm">
+  <mat-card class="big-input">
+    <input [(ngModel)]="titlevalue"
+           placeholder="Input Title"
+           maxlength="15"
+           required
+           #title="ngModel"
+           name="title"
+           [disabled]="disabled" />
+    <button mat-raised-button
+            [disabled]="!todoForm.form.valid"
+            matTooltip="Add new todo"
+            [matTooltipPosition]="'before'"
+            aria-label="Button positions">
+      <mat-icon>add_box</mat-icon>
+    </button>
+  </mat-card>
+</form>

@@ -8,7 +8,8 @@ import { AppSharedModule } from '../common/shared.module';
 import {
   MatTooltipModule,
   MatMenuModule,
-  MatChipsModule
+  MatChipsModule,
+  MatCheckboxModule
 } from '@angular/material';
 
 import { StoreModule } from '@ngrx/store';
@@ -30,6 +31,7 @@ describe('ExamplesComponent', () => {
         MatTooltipModule,
         MatMenuModule,
         MatChipsModule,
+        MatCheckboxModule,
         StoreModule.forRoot({}),
         EffectsModule.forRoot([TodosEffects])
       ],

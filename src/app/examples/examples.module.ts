@@ -14,7 +14,8 @@ import { TodoformsComponent } from './components/todoforms/todoforms.component';
 import {
   MatTooltipModule,
   MatMenuModule,
-  MatChipsModule
+  MatChipsModule,
+  MatCheckboxModule
 } from '@angular/material';
 
 @NgModule({
@@ -31,7 +32,8 @@ import {
     AppSharedModule,
     MatMenuModule,
     MatChipsModule,
-    StoreModule.forFeature('examples', reducers),
+    MatCheckboxModule,
+    StoreModule.forFeature('apptodo', reducers),
     EffectsModule.forFeature([TodosEffects])
   ],
   providers: []

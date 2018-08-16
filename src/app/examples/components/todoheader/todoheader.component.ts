@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-todoheader',
@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todoheader.component.scss']
 })
 export class TodoheaderComponent implements OnInit {
-  data: boolean = true;
+  @Input()
+  lengthtodo: number = 0;
+  public data: boolean = true;
   constructor() {}
 
   ngOnInit() {}

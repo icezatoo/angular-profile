@@ -7,8 +7,16 @@
     </div>
     <div class="row">
       <div class="col-md-12">
-        <app-todoheader></app-todoheader>
-        <app-todolist></app-todolist>
+        <app-todoheader [lengthtodo]="lengthtodo$ | async"></app-todoheader>
+        <div *ngIf="loading$ | async; else elseloading">
+          <app-todolist [todolist]="tododata$ | async"></app-todolist>
+        </div>
+        <ng-template #elseloading>
+          <mat-progress-spinner class="progress-spinner"
+                                [color]="'primary'"
+                                [mode]="'indeterminate'">
+          </mat-progress-spinner>
+        </ng-template>
       </div>
     </div>
   </div>

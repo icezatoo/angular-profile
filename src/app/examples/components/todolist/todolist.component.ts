@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Todo } from '../../services/model';
 
 @Component({
   selector: 'app-todolist',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todolist.component.scss']
 })
 export class TodolistComponent implements OnInit {
-
-  constructor() { }
+  @Input()
+  todolist: Todo[] = [];
+  constructor() {}
 
   ngOnInit() {
+    // console.log(this.todolist);
+    // const indexd = this.todolist.filter((data, index) => index >= 10);
+    // console.log(indexd);
   }
-
 }
