@@ -21,4 +21,16 @@ export class ExamplesComponent implements OnInit {
   ngOnInit() {
     this.examplesfacadesService.onsetTodo();
   }
+
+  onaddtodo(event) {
+    this.examplesfacadesService.addTodo(event);
+  }
+
+  onremove(event) {
+    this.examplesfacadesService.removeTodolist(event);
+  }
+
+  onToggleTodolist(event) {
+    this.examplesfacadesService.onToggleTodolist(event);
+  }
 }

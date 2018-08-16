@@ -2,14 +2,16 @@
   <div class="container">
     <div class="row justify-content-md-center">
       <div class="offset-md-2 col-md-8 entry">
-        <app-todoforms></app-todoforms>
+        <app-todoforms (onaddtodo)="onaddtodo($event)"></app-todoforms>
       </div>
     </div>
     <div class="row">
       <div class="col-md-12">
         <app-todoheader [lengthtodo]="lengthtodo$ | async"></app-todoheader>
         <div *ngIf="loading$ | async; else elseloading">
-          <app-todolist [todolist]="tododata$ | async"></app-todolist>
+          <app-todolist [todolist]="tododata$ | async"
+                        (onToggleTodolist)="onToggleTodolist($event)"
+                        (onremove)="onremove($event)"></app-todolist>
         </div>
         <ng-template #elseloading>
           <mat-progress-spinner class="progress-spinner"

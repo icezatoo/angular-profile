@@ -28,4 +28,12 @@ export class ExamplesfacadesService {
   addTodo(title: string) {
     this.store.dispatch(new todoAction.AddTodolist(title));
   }
+
+  removeTodolist(id: string) {
+    this.store.dispatch(new todoAction.RemoveTodolist(id));
+  }
+
+  onToggleTodolist(id: string) {
+    this.store.dispatch(new todoAction.ToggleTodolist(id));
+  }
 }

@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ExamplesfacadesService } from '../../services';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-todoforms',
@@ -8,13 +7,15 @@ import { ExamplesfacadesService } from '../../services';
 })
 export class TodoformsComponent implements OnInit {
   public titlevalue = '';
-  constructor(private examplesfacadesService: ExamplesfacadesService) {}
+  @Output()
+  public onaddtodo = new EventEmitter<string>();
+  constructor() {}
 
   ngOnInit() {}
 
   AddTodo(event) {
-    this.examplesfacadesService.addTodo(this.titlevalue);
     event.preventDefault();
+    this.onaddtodo.emit(this.titlevalue);
     this.titlevalue = '';
   }
 }

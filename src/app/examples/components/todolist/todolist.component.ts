@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Todo } from '../../services/model';
 
 @Component({
@@ -9,11 +9,20 @@ import { Todo } from '../../services/model';
 export class TodolistComponent implements OnInit {
   @Input()
   todolist: Todo[] = [];
+  @Output()
+  onremove = new EventEmitter<string>();
+
+  @Output()
+  onToggleTodolist = new EventEmitter<string>();
   constructor() {}
 
-  ngOnInit() {
-    // console.log(this.todolist);
-    // const indexd = this.todolist.filter((data, index) => index >= 10);
-    // console.log(indexd);
+  ngOnInit() {}
+
+  onremovetodo(id) {
+    this.onremove.emit(id);
+  }
+
+  onToggleTodo(id) {
+    this.onToggleTodolist.emit(id);
   }
 }
