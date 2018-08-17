@@ -10,6 +10,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { GetProfileEffects } from './common/effect/getprofile.effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { RouterLinkDirectiveStub } from '../testing/router-link-directive-stub';
 
 import {
   MatToolbarModule,
@@ -17,7 +18,7 @@ import {
   MatGridListModule
 } from '@angular/material';
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, RouterLinkDirectiveStub],
   imports: [
     HttpClientModule,
     AppRoutingModule,
