@@ -1,0 +1,43 @@
+{
+  "profile": {
+    "overview": {
+      "name": "WATCHARAPONG TUBJEEN",
+      "description": "Web developer with 2 years' experience building products for with a Software  and  present i'm developer Software with Car industry Japen company and i'm A technology enthusiast"
+    },
+    "experience": [
+      {
+        "id": "14782",
+        "title": "CDG",
+        "linkimage": "/assets/image/cdg.jpg",
+        "timeperiod": "2016 - 2017",
+        "description": "budget system and Electronic Documentation System",
+        "link": "http://www.cdg.co.th/website/"
+      },
+      {
+        "id": "18857",
+        "title": "Vertice-international",
+        "linkimage": "/assets/image/vertice.jpg",
+        "timeperiod": "2017 - present",
+        "description": "Car industry system",
+        "link": "http://www.vertice-international.com/"
+      }
+    ],
+    "projects": [
+      {
+        "id": "a2oowiiwi",
+        "linkimage": "/assets/image/ega.png",
+        "link": "https://www.dga.or.th/th/index.php"
+      },
+      {
+        "id": "aw74w7",
+        "linkimage": "/assets/image/carbell.png",
+        "link": "https://kurumajiten.jp/login"
+      },
+      {
+        "id": "rwa47w",
+        "linkimage": "/assets/image/carstamate.jpg",
+        "link": "https://carsta.cloud/"
+      }
+    ]
+  }
+}
