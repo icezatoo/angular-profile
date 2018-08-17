@@ -9,6 +9,8 @@ import { Todo } from '../../services/model';
 export class TodolistComponent implements OnInit {
   @Input()
   todolist: Todo[] = [];
+  @Input()
+  filterdata: any[];
   @Output()
   onremove = new EventEmitter<string>();
 

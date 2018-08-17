@@ -1,3 +1,4 @@
+import { combineLatest } from 'rxjs';
 import { Injectable } from '@angular/core';
 import * as fromStore from '../reducers';
 import { Store } from '@ngrx/store';
@@ -17,12 +18,20 @@ export class ExamplesfacadesService {
     this.store.dispatch(new todoAction.GetTodo());
   }
 
+  onsetfilter(filter) {
+    this.store.dispatch(new todoAction.FilterTodolist(filter));
+  }
+
   getloading$() {
     return this.store.select(fromStore.getIsLodingTodo$);
   }
 
   getlengthtodo$() {
     return this.store.select(fromStore.getlengthTodolist$);
+  }
+
+  getFiltertodo$() {
+    return this.store.select(fromStore.getFilterTodolist$);
   }
 
   addTodo(title: string) {
@@ -35,5 +44,9 @@ export class ExamplesfacadesService {
 
   onToggleTodolist(id: string) {
     this.store.dispatch(new todoAction.ToggleTodolist(id));
+  }
+
+  ongetdataheader$() {
+    return combineLatest(this.getFiltertodo$(), this.getlengthtodo$());
   }
 }

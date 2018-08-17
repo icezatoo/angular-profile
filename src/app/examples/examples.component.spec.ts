@@ -17,6 +17,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { TodosEffects } from './effect/todos.effects';
 import { ExamplesfacadesService } from './services/examplesfacades.service';
 import { Observable } from 'rxjs';
+import { FilterPipe } from './pips/filter.pipe';
 
 let component: ExamplesComponent;
 let fixture: ComponentFixture<ExamplesComponent>;
@@ -39,7 +40,8 @@ describe('ExamplesComponent', () => {
         ExamplesComponent,
         TodoheaderComponent,
         TodoformsComponent,
-        TodolistComponent
+        TodolistComponent,
+        FilterPipe
       ],
       providers: [ExamplesfacadesService]
     }).compileComponents();

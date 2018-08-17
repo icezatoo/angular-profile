@@ -10,24 +10,28 @@
             #menu="matMenu"
             xPosition="before">
     <button mat-menu-item
-            [ngClass]="{ active: data  }"
+            [ngClass]="{ active: dataheader ?  (dataheader[0] === 'ALL') : false  }"
+            (click)="onfilter('ALL')"
             aria-label="menu">
       <mat-icon>list</mat-icon>
       <span>All</span>
     </button>
     <button mat-menu-item
+            [ngClass]="{ active:  dataheader  ? (dataheader[0] === 'DONE') : false  }"
+            (click)="onfilter('DONE')"
             aria-label="menutwo">
       <mat-icon>done</mat-icon>
       <span>Done</span>
     </button>
-
     <button mat-menu-item
+            [ngClass]="{ active: dataheader ?  (dataheader[0] === 'ACTIVE') : false  }"
+            (click)="onfilter('ACTIVE')"
             aria-label="menuthree">
       <mat-icon>stop</mat-icon>
       <span>Active</span>
     </button>
   </mat-menu>
   <mat-chip-list class="todos-filter-info">
-    <mat-chip>Displaying all {{lengthtodo}} todo </mat-chip>
+    <mat-chip>Displaying all {{ dataheader ? (dataheader[1]) : 0}} todo </mat-chip>
   </mat-chip-list>
 </h2>

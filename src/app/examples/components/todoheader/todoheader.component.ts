@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-todoheader',
@@ -7,9 +7,14 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TodoheaderComponent implements OnInit {
   @Input()
-  lengthtodo: number = 0;
-  public data: boolean = true;
+  dataheader: any[];
+  @Output()
+  onFiltermenu = new EventEmitter<string>();
   constructor() {}
 
   ngOnInit() {}
+
+  onfilter(data) {
+    this.onFiltermenu.emit(data);
+  }
 }

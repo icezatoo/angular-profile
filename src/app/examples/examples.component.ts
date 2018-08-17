@@ -11,11 +11,11 @@ import { Todo } from './services/model';
 export class ExamplesComponent implements OnInit {
   tododata$: Observable<Todo[]>;
   loading$: Observable<any>;
-  lengthtodo$: Observable<any>;
+  datatodoheader: Observable<any[]>;
   constructor(private examplesfacadesService: ExamplesfacadesService) {
     this.tododata$ = this.examplesfacadesService.ongetTodo$();
     this.loading$ = this.examplesfacadesService.getloading$();
-    this.lengthtodo$ = this.examplesfacadesService.getlengthtodo$();
+    this.datatodoheader = this.examplesfacadesService.ongetdataheader$();
   }
 
   ngOnInit() {
@@ -32,5 +32,9 @@ export class ExamplesComponent implements OnInit {
 
   onToggleTodolist(event) {
     this.examplesfacadesService.onToggleTodolist(event);
+  }
+
+  onFiltermenu(event) {
+    this.examplesfacadesService.onsetfilter(event);
   }
 }

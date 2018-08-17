@@ -1,7 +1,7 @@
 <div class="containertodo">
   <div *ngIf="todolist.length !== 0; else elsetodolist">
     <mat-card class="todo"
-              *ngFor="let todo of todolist">
+              *ngFor="let todo of (todolist | filter: filterdata[0])">
       <mat-checkbox class="todo-done"
                     (click)="onToggleTodo(todo.id)"
                     [checked]="todo.completed"></mat-checkbox>

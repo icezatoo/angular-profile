@@ -26,3 +26,10 @@ export const getlengthTodolist$ = createSelector(
     return state.lengthdata;
   }
 );
+
+export const getFilterTodolist$ = createSelector(
+  getApptodo,
+  (state: fromtodo.State) => {
+    return state.filter;
+  }
+);

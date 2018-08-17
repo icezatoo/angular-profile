@@ -7,9 +7,11 @@
     </div>
     <div class="row">
       <div class="col-md-12">
-        <app-todoheader [lengthtodo]="lengthtodo$ | async"></app-todoheader>
+        <app-todoheader [dataheader]="datatodoheader |async"
+                        (onFiltermenu)="onFiltermenu($event)"></app-todoheader>
         <div *ngIf="loading$ | async; else elseloading">
           <app-todolist [todolist]="tododata$ | async"
+                        [filterdata]="datatodoheader | async"
                         (onToggleTodolist)="onToggleTodolist($event)"
                         (onremove)="onremove($event)"></app-todolist>
         </div>

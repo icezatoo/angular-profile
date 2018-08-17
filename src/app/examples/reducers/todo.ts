@@ -73,7 +73,7 @@ export function reducer(state = initialState, action: Action.Actions): State {
       return {
         ...state,
         todo: [...newdatatodo],
-        lengthdata: newdatatodo.length
+        lengthdata: onFilterCountlist(state.filter, newdatatodo)
       };
     }
 
@@ -83,7 +83,7 @@ export function reducer(state = initialState, action: Action.Actions): State {
       return {
         ...state,
         todo: [...removetodo],
-        lengthdata: removetodo.length
+        lengthdata: onFilterCountlist(state.filter, removetodo)
       };
     }
 
@@ -101,8 +101,26 @@ export function reducer(state = initialState, action: Action.Actions): State {
       };
     }
 
+    case Action.FILTER_TODO: {
+      return {
+        ...state,
+        filter: action.payload,
+        lengthdata: onFilterCountlist(action.payload, state.todo)
+      };
+    }
+
     default: {
       return state;
     }
   }
 }
+
+export const onFilterCountlist = (data, todo) => {
+  if (data === 'DONE') {
+    return todo.filter(val => val.completed == true).length;
+  } else if (data === 'ACTIVE') {
+    return todo.filter(val => val.completed == false).length;
+  } else {
+    return todo.length;
+  }
+};

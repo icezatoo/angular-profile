@@ -17,13 +17,15 @@ import {
   MatChipsModule,
   MatCheckboxModule
 } from '@angular/material';
+import { FilterPipe } from './pips/filter.pipe';
 
 @NgModule({
   declarations: [
     ExamplesComponent,
     TodolistComponent,
     TodoheaderComponent,
-    TodoformsComponent
+    TodoformsComponent,
+    FilterPipe
   ],
   imports: [
     CommonModule,

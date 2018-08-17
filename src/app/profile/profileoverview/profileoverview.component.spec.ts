@@ -16,9 +16,10 @@ describe('ProfileoverviewComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ProfileoverviewComponent);
     component = fixture.componentInstance;
+    // fixture.detectChanges();
   });
 
-  it('should create Profileoverview', () => {
+  it('should create Profileoverview', async(() => {
     expect(component).toBeTruthy();
-  });
+  }));
 });
