@@ -15,7 +15,7 @@ export class GetProfileEffects {
     debounceTime(500),
     ofType(Act.GET_INIT),
     mergeMap(action =>
-      this.http$.get('/assets/mock/profile.json').pipe(
+      this.http$.get('./assets/mock/profile.json').pipe(
         map(data => ({ type: Act.GET_INIT_SUCCESS, payload: data })),
         catchError(() => of({ type: Act.GET_INIT_FAILED }))
       )
