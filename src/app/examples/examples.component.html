@@ -6,22 +6,24 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-12">
-        <app-todoheader [dataheader]="datatodoheader |async"
-                        (onFiltermenu)="onFiltermenu($event)"></app-todoheader>
-        <div *ngIf="loading$ | async; else elseloading">
-          <app-todolist [todolist]="tododata$ | async"
-                        [filterdata]="datatodoheader | async"
-                        (onToggleTodolist)="onToggleTodolist($event)"
-                        (onremove)="onremove($event)"></app-todolist>
+      <div class="col-12 col-md-12 col-lg-12">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-12 col-lg-12">
+              <app-todoheader [dataheader]="datatodoheader |async" (onFiltermenu)="onFiltermenu($event)"></app-todoheader>
+            </div>
+          </div>
+          <div *ngIf="loading$ | async; else elseloading">
+
+            <app-todolist [todolist]="tododata$ | async" [filterdata]="datatodoheader | async" (onToggleTodolist)="onToggleTodolist($event)"
+              (onremove)="onremove($event)"></app-todolist>
+
+            <ng-template #elseloading>
+              <mat-progress-spinner class="progress-spinner" [color]="'primary'" [mode]="'indeterminate'">
+              </mat-progress-spinner>
+            </ng-template>
+          </div>
         </div>
-        <ng-template #elseloading>
-          <mat-progress-spinner class="progress-spinner"
-                                [color]="'primary'"
-                                [mode]="'indeterminate'">
-          </mat-progress-spinner>
-        </ng-template>
       </div>
     </div>
   </div>
-</div>

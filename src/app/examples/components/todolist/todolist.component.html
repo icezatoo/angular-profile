@@ -1,20 +1,23 @@
 <div class="containertodo">
   <div *ngIf="todolist.length !== 0; else elsetodolist">
-    <mat-card class="todo"
-              *ngFor="let todo of (todolist | filter: filterdata[0])">
-      <mat-checkbox class="todo-done"
-                    (click)="onToggleTodo(todo.id)"
-                    [checked]="todo.completed"></mat-checkbox>
-      <span class="todo-label"
-            [ngClass]="{ 'todo-label-done': todo.completed }">
-        &nbsp;{{todo.title}}&nbsp;
-      </span>
-      <button class="todos-delete"
-              (click)="onremovetodo(todo.id)"
-              aria-label="tododelete"
-              mat-icon-button>
-        <mat-icon>delete</mat-icon>
-      </button>
+    <mat-card class="todo" *ngFor="let todo of (todolist | filter: filterdata[0])">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-12 col-lg-12">
+            <mat-checkbox class="todo-done" (click)="onToggleTodo(todo.id)" [checked]="todo.completed"></mat-checkbox>
+            <span class="todo-label" [ngClass]="{ 'todo-label-done': todo.completed }">
+              &nbsp;{{todo.title}}&nbsp;
+            </span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-12 col-lg-12">
+            <button class="todos-delete" (click)="onremovetodo(todo.id)" aria-label="tododelete" mat-icon-button>
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
     </mat-card>
   </div>
   <ng-template #elsetodolist>
